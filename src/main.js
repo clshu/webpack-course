@@ -1,3 +1,4 @@
+require('webpack-hot-middleware/client')
 require('./main.css')
 require('./images/link.jpg')
 require('./index.html')

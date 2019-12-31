@@ -1,8 +1,9 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
-    main: ['./src/main.js']
+    main: ['webpack-hot-middleware/client', './src/main.js']
   },
   mode: 'development',
   output: {
@@ -12,7 +13,8 @@ module.exports = {
   },
   devServer: {
     contentBase: 'dist',
-    overlay: true
+    overlay: true,
+    hot: true
   },
   module: {
     rules: [
@@ -55,5 +57,6 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 }
